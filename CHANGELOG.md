@@ -9,6 +9,13 @@ pins (see [`docs/conformance.md`](docs/conformance.md)).
 
 ## [Unreleased]
 
+### Performance
+
+- Rule targets and `%{...}` macros read collections in place:
+  `HashMapCollection` and `TxCollection` gain `iter`, `values` and
+  `iter_regex`, which hand out what `all`, `get` and `get_regex` used to
+  collect into a list first. (#98)
+
 ## [0.8.1] - 2026-11-21
 
 A security fix: with the OWASP CRS at blocking paranoia level 3, attacks were
